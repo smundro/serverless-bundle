@@ -191,6 +191,9 @@ function loaders() {
     test: /\.js$/,
     exclude: /node_modules/,
     use: [ENABLE_ESBUILD ? esbuildLoader("jsx") : babelLoader()],
+    resolve: {
+      fullySpecified: false,
+    },
   };
 
   const loaders = {
